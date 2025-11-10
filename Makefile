@@ -58,7 +58,7 @@ SRCS_BONUS =	ft_lstnew.c			\
 				ft_lstdelone.c		\
 				ft_lstclear.c		\
 				ft_lstiter.c		\
-				ft_lstmap.c			
+				ft_lstmap.c		
 
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
@@ -66,20 +66,22 @@ OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar rcs $(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
-bonus: $(OBJS) $(OBJS_BONUS)
-	@ar rcs $(NAME) $(OBJS) $(OBJS_BONUS)
-	@touch .bonus
+bonus: .bonus
+
+.bonus: $(OBJS) $(OBJS_BONUS)
+	ar rcs $(NAME) $(OBJS) $(OBJS_BONUS)
+	touch .bonus
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@rm -f $(OBJS) $(OBJS_BONUS)
+	rm -f $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
-	@rm -f $(NAME) .bonus
+	rm -f $(NAME) .bonus
 
 re: fclean all
 
