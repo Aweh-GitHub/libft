@@ -6,11 +6,11 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 19:26:15 by thantoni          #+#    #+#             */
-/*   Updated: 2025/09/03 19:17:59 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/10 13:29:16 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(char c)
+int	ft_isalnum(int c)
 {
 	return ((c >= 'a' && c <= 'z')
 		|| (c >= 'A' && c <= 'Z')

@@ -6,7 +6,7 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 19:04:51 by thantoni          #+#    #+#             */
-/*   Updated: 2025/09/03 19:24:53 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/10 13:31:41 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *ptr_dest, const void *ptr_src, size_t n)
 	unsigned char		*mem_dest;
 	const unsigned char	*mem_src;
 
+	if (ptr_dest == NULL && ptr_src == NULL)
+		return (NULL);
 	mem_dest = (unsigned char *)ptr_dest;
 	mem_src = (const unsigned char *)ptr_src;
 	if (mem_dest > mem_src)

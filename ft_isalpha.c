@@ -6,11 +6,11 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 19:19:27 by thantoni          #+#    #+#             */
-/*   Updated: 2025/09/03 19:18:01 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/10 13:27:30 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
 	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
