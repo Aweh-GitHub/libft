@@ -12,8 +12,8 @@
 
 #include <stddef.h>
 
-static void	copy_backward(unsigned char *dest,\
-	const unsigned char *src, size_t n)
+static void	copy_backward(unsigned char *dest, const \
+	unsigned char *src, size_t n)
 {
 	while (n > 0)
 	{
@@ -22,8 +22,8 @@ static void	copy_backward(unsigned char *dest,\
 	}
 }
 
-static void	copy_forward(unsigned char *dest,\
-	const unsigned char *src, size_t n)
+static void	copy_forward(unsigned char *dest, const \
+	unsigned char *src, size_t n)
 {
 	size_t	i;
 
