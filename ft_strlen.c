@@ -6,16 +6,18 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 19:34:59 by thantoni          #+#    #+#             */
-/*   Updated: 2025/09/03 18:12:04 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/10 14:45:01 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(const char *str)
-{
-	int	len_count;
+#include <stddef.h>
 
-	len_count = 0;
-	while (str[len_count])
-		len_count++;
-	return (len_count);
+size_t	ft_strlen(const char *s)
+{
+	size_t	len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	return (len);
 }

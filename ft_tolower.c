@@ -6,11 +6,11 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 20:17:59 by thantoni          #+#    #+#             */
-/*   Updated: 2025/09/03 18:42:37 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/10 14:25:50 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_tolower(char c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		c += 32;

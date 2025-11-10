@@ -6,58 +6,56 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/08 14:57:30 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/05 10:31:36 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/10 14:38:04 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "libft.h"
 
-static int	is_contained(char c, char const *set)
+static int	is_in_set(char c, char const *set)
 {
-	size_t	i;
-
-	i = 0;
-	while (set[i])
+	while (*set)
 	{
-		if (c == set[i])
+		if (c == *set)
 			return (1);
-		i++;
+		set++;
 	}
 	return (0);
 }
 
-static size_t	ft_strlen(char const *str)
+static char	*alloc_trim(char const *s1, size_t start, size_t end)
 {
+	char	*str;
 	size_t	i;
 
+	str = malloc(sizeof(char) * (end - start + 1));
+	if (!str)
+		return (NULL);
 	i = 0;
-	while (str[i])
+	while (start + i < end)
+	{
+		str[i] = s1[start + i];
 		i++;
-	return (i);
+	}
+	str[i] = '\0';
+	return (str);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*trim_str;
-	size_t	trim_start;
-	size_t	trim_end;
+	size_t	start;
+	size_t	end;
 	size_t	len;
-	size_t	i;
 
+	if (!s1 || !set)
+		return (NULL);
 	len = ft_strlen(s1);
-	trim_start = 0;
-	while (trim_start < len && is_contained(s1[trim_start], set))
-		trim_start++;
-	trim_end = len;
-	while (trim_end > trim_start && is_contained(s1[trim_end - 1], set))
-		trim_end--;
-	trim_str = malloc(sizeof(char) * (trim_end - trim_start + 1));
-	trim_str[(trim_end - trim_start)] = '\0';
-	i = 0;
-	while (i + trim_start < trim_end)
-	{
-		trim_str[i] = s1[i + trim_start];
-		i++;
-	}
-	return (trim_str);
+	start = 0;
+	while (start < len && is_in_set(s1[start], set))
+		start++;
+	end = len;
+	while (end > start && is_in_set(s1[end - 1], set))
+		end--;
+	return (alloc_trim(s1, start, end));
 }

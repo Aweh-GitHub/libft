@@ -6,11 +6,11 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 20:16:08 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/05 10:31:41 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/10 14:22:12 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_toupper(char c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		c -= 32;

@@ -6,27 +6,29 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 19:53:32 by thantoni          #+#    #+#             */
-/*   Updated: 2025/09/03 20:00:52 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/10 14:55:29 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-char	*ft_strdup(const char *src)
+char	*ft_strdup(const char *s)
 {
 	char	*dup;
-	size_t	src_len;
+	size_t	len;
 
-	src_len = 0;
-	while (src[src_len])
-		src_len++;
-	dup = malloc(sizeof(char) * (src_len + 1));
-	src_len = 0;
-	while (src[src_len])
+	len = 0;
+	while (s[len])
+		len++;
+	dup = malloc(sizeof(char) * (len + 1));
+	if (dup == NULL)
+		return (NULL);
+	len = 0;
+	while (s[len])
 	{
-		dup[src_len] = src[src_len];
-		src_len++;
+		dup[len] = s[len];
+		len++;
 	}
-	dup[src_len] = '\0';
+	dup[len] = '\0';
 	return (dup);
 }

@@ -6,20 +6,20 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 20:18:58 by thantoni          #+#    #+#             */
-/*   Updated: 2025/09/03 19:47:35 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/10 14:50:17 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-char	*ft_strchr(const char *str, int value)
+char	*ft_strchr(const char *s, int c)
 {
 	const unsigned char	*u_str;
 	unsigned char		u_value;
 	size_t				i;
 
-	u_str = (const unsigned char *)str;
-	u_value = (unsigned char) value;
+	u_str = (const unsigned char *)s;
+	u_value = (unsigned char) c;
 	i = 0;
 	while (u_str[i])
 	{

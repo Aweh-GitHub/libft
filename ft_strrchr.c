@@ -6,23 +6,23 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 20:24:05 by thantoni          #+#    #+#             */
-/*   Updated: 2025/09/03 19:11:45 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/10 14:51:24 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-char	*ft_strrchr(const char *str, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (s[i])
 		i++;
 	while (i >= 0)
 	{
-		if (str[i] == c)
-			return (&((char *)str)[i]);
+		if (s[i] == c)
+			return (&((char *)s)[i]);
 		i--;
 	}
 	return (NULL);

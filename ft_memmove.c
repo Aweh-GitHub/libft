@@ -6,39 +6,47 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 19:04:51 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/10 13:31:41 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:00:01 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void	*ft_memmove(void *ptr_dest, const void *ptr_src, size_t n)
+static void	copy_backward(unsigned char *dest,\
+	const unsigned char *src, size_t n)
 {
-	size_t				i;
-	unsigned char		*mem_dest;
-	const unsigned char	*mem_src;
+	while (n > 0)
+	{
+		n--;
+		dest[n] = src[n];
+	}
+}
 
-	if (ptr_dest == NULL && ptr_src == NULL)
+static void	copy_forward(unsigned char *dest,\
+	const unsigned char *src, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+}
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	unsigned char	*cast_dest;
+	unsigned char	*cast_src;
+
+	if (!dest && !src)
 		return (NULL);
-	mem_dest = (unsigned char *)ptr_dest;
-	mem_src = (const unsigned char *)ptr_src;
-	if (mem_dest > mem_src)
-	{
-		i = n;
-		while (i > 0)
-		{
-			i--;
-			mem_dest[i] = mem_src[i];
-		}
-	}
+	cast_dest = (unsigned char *)dest;
+	cast_src = (unsigned char *)src;
+	if (cast_dest > cast_src)
+		copy_backward(cast_dest, cast_src, n);
 	else
-	{
-		i = 0;
-		while (i < n)
-		{
-			mem_dest[i] = mem_src[i];
-			i++;
-		}
-	}
-	return (ptr_dest);
+		copy_forward(cast_dest, cast_src, n);
+	return (dest);
 }
