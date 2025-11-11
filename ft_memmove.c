@@ -6,13 +6,13 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 19:04:51 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/10 15:00:01 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/11/11 15:59:54 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-static void	copy_backward(unsigned char *dest, const \
+static void	copy_backward(unsigned char *dest, const\
 	unsigned char *src, size_t n)
 {
 	while (n > 0)
@@ -22,7 +22,7 @@ static void	copy_backward(unsigned char *dest, const \
 	}
 }
 
-static void	copy_forward(unsigned char *dest, const \
+static void	copy_forward(unsigned char *dest, const\
 	unsigned char *src, size_t n)
 {
 	size_t	i;
