@@ -6,7 +6,7 @@
 /*   By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 19:13:16 by thantoni          #+#    #+#             */
-/*   Updated: 2025/11/10 14:58:54 by thantoni         ###   ########.fr       */
+/*   Updated: 2025/12/08 10:53:30 by thantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define LIBFT_H
 
 # include <stddef.h>
+
+# define TRUE 1
+# define FALSE 0
 
 typedef struct s_list
 {
@@ -64,5 +67,8 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+void	*ft_first(void **array, void *ref, int (*f)(void *, void *));
+int		ft_contains(const char *str, const char *ref);
 
 #endif

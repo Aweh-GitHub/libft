@@ -6,7 +6,7 @@
 #    By: thantoni <thantoni@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/03 18:59:12 by thantoni          #+#    #+#              #
-#    Updated: 2025/11/10 14:29:02 by thantoni         ###   ########.fr        #
+#    Updated: 2025/12/04 10:04:03 by thantoni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,9 @@ SRCS =	ft_isalpha.c	\
 		ft_putchar_fd.c		\
 		ft_putstr_fd.c		\
 		ft_putendl_fd.c		\
-		ft_putnbr_fd.c
+		ft_putnbr_fd.c		\
+		ft_contains.c		\
+		ft_first.c			\
 
 SRCS_BONUS =	ft_lstnew.c			\
 				ft_lstadd_front.c	\
